@@ -51,7 +51,7 @@ if (strpos($resposta, 'true')) {
     "nascimento" => "$birthdate",
     "datetime" => "$datetime",
     "timestamp" => "$unixtime",
-    "creditos" => "@EUTHEUZIN"
+    
   ];
   
 } else {
@@ -63,7 +63,7 @@ if (strpos($resposta, 'true')) {
     "mensagem" => "CPF NÃO É VÁLIDO OU NÃO ENCONTRADO NA BASE!",
     "datetime" => "$datetime",
     "timestamp" => "$unixtime",
-    "creditos" => "@EUTHEUZIN"
+    
   ];
 }
 print_r(json_encode($json, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
