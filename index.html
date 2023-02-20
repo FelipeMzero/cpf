@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Validação de CPF</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			background-color: #f5f5f5;
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.card {
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			padding: 32px;
+			width: 400px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: 500;
+			margin: 0 0 16px;
+			text-align: center;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			margin-top: 16px;
+		}
+		label {
+			font-size: 14px;
+			font-weight: 500;
+			margin-bottom: 8px;
+		}
+		input[type="text"] {
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 14px;
+			padding: 8px;
+			margin-bottom: 16px;
+		}
+		button[type="submit"] {
+			background-color: #08a3ff;
+			border: none;
+			border-radius: 4px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 14px;
+			font-weight: 500;
+			padding: 12px 0;
+		}
+		button[type="submit"]:hover {
+			background-color: #0077c2;
+		}
+		.error {
+			color: red;
+			font-size: 14px;
+			margin-top: 8px;
+			text-align: center;
+		}
+		.success {
+			color: green;
+			font-size: 14px;
+			margin-top: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<h1>Validação de CPF</h1>
+			<form method="get" action="valida-cpf.php">
+				<label for="cpf">CPF:</label>
+				<input type="text" id="cpf" name="cpf" placeholder="Digite o CPF">
+				<button type="submit">Validar</button>
+			</form>
+			<?php if (isset($mensagem)): ?>
+				<?php if ($statuscode == 200): ?>
+					<div class="success"><?php echo $mensagem ?></div>
+				<?php else: ?>
+					<div class="error"><?php echo $mensagem ?></div>
+				<?php endif; ?>
+			<?php endif; ?>
+		</div>
+	</div>
+</body>
+</html>
